@@ -21,8 +21,8 @@ int main() {
 		auto U = H.U();
 		
 		double alpha_i = -1.1579e-6;
-		//Operator rho0 = Op<2>(0,0.5,0.5,0.5,0.5)*Op<2>(1,0.5*(1-alpha_i),0,0,0.5*(1+alpha_i));
-		Operator rho0 = Op<2>(0,0.5,0.5,0.5,0.5)*Op<2>(1,0,0,0,1);
+		Operator rho0 = Op<2>(0,0.5,0.5,0.5,0.5)*Op<2>(1,0.5*(1-alpha_i),0,0,0.5*(1+alpha_i));
+		//Operator rho0 = Op<2>(0,0.5,0.5,0.5,0.5)*Op<2>(1,0,0,0,1);
 		
 		stringstream fnstream;
 		fnstream << "2Qbit_" << f1/1_MHz << "MHz.txt";
