@@ -1,6 +1,7 @@
 #include "spin.hpp"
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 double fi = -14.5_MHz;
 double Azx[7] = { 1.0625_MHz,-2.5745_MHz,0.1657_MHz,1.2042_MHz,0.0968_MHz,0.7024_MHz,-2.6575_MHz };
@@ -22,15 +23,16 @@ int main() {
 		/* initial state */
 		double alpha_e = 7.6216e-4;
 		double alpha_i = -1.1579e-6;
-		Operator rho0 = Op<2>(0,0.5*(1-alpha_e),0,0,0.5*(1+alpha_e));
-		//Operator rho0 = Op<2>(0,0.5,0.5,0.5,0.5);
+		//Operator rho0 = Op<2>(0,0.5*(1-alpha_e),0,0,0.5*(1+alpha_e));
+		Operator rho0 = Op<2>(0,0.5,0.5,0.5,0.5);
 		for(int i=1;i<=7;i++)
 			rho0 *= Op<2>(i,0.5*(1-alpha_i),0,0,0.5*(1+alpha_i));
 		/* output stream */
 		stringstream fnstream;
-		fnstream << "malonic-no-main-H_" << fe/1_MHz << "MHz.txt";
+		fnstream << "malonic-no-main-H-DNP_" << fe/1_MHz << "MHz.txt";
 		string fn = fnstream.str();
 		ofstream out(fn);
+		cout << fn << ":" << endl;
 		/* calculate and output */
 		for(int i=0;i<=n;i++) {
 			double t = delta_t*i;
