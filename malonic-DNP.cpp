@@ -4,7 +4,7 @@
 #include <vector>
 
 double fi = -14.5_MHz;
-double fe = -56.7549_MHz;
+double fe = -28.3775_MHz;
 constexpr int N = 8;
 double Azx[N] = { -5.8293_MHz,1.0625_MHz,-2.5745_MHz,0.1657_MHz,1.2042_MHz,0.0968_MHz,0.7024_MHz,-2.6575_MHz };
 double Azy[N] = { 0.7154_MHz,0.4234_MHz,-0.5842_MHz,-1.8497_MHz,-1.6795_MHz,-1.9991_MHz,-0.6635_MHz,-1.9556_MHz };
