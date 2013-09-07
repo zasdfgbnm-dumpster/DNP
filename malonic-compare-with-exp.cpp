@@ -11,10 +11,11 @@ double Azy[N] = { 0.7154_MHz,0.4234_MHz,-0.5842_MHz,-1.8497_MHz,-1.6795_MHz,-1.9
 double Azz[N] = { -56.3421_MHz,-3.9900_MHz,-1.3463_MHz,-0.5889_MHz,-0.5885_MHz,1.3987_MHz,-1.2610_MHz,7.4265_MHz };
 
 int main() {
-	int n = 2000;
-	double T = 2000_ns;
+	int n = 1024;
+	double T = 2048_ns;
 	double delta_t = T/n;
-	vector<double> f1_list = { 7.445_MHz,9.236_MHz,10.271_MHz,16.113_MHz,11.719_MHz,20.509_MHz };
+	//vector<double> f1_list = { 7.445_MHz,9.236_MHz,10.271_MHz,16.113_MHz,11.719_MHz,20.509_MHz };
+	vector<double> f1_list = { 7_MHz,8_MHz,9_MHz,10_MHz,11_MHz,12_MHz,16_MHz,17_MHz,20_MHz,21_MHz };
 	for(auto k=f1_list.begin();k!=f1_list.end();k++) {
 		/* Hamiltonian */
 		double f1 = *k;
